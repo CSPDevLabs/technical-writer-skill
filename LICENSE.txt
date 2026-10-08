@@ -1,0 +1,3 @@
+This directory is the publishable skill. Publish the directory, not paths outside it.
+
+SKILL.md, README.md, and this license file are part of the skill package.
