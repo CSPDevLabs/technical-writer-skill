@@ -1,0 +1,63 @@
+# Patterns for the pre-output check. One pattern per line. Lines that start with "#" are comments.
+# The check prints matching lines for review. The agent decides whether each match breaks a rule.
+#
+# Quality judgements (rule 4)
+robust
+seamless(ly)?
+powerful
+flexible
+elegant
+intuitive
+user[- ]friendly
+easy[- ]to[- ]use
+#
+# Marketing (rule 4)
+best[- ]in[- ]class
+world[- ]class
+cutting[- ]edge
+state[- ]of[- ]the[- ]art
+next[- ]generation
+industry[- ]leading
+innovative
+revolutionary
+game[- ]chang(er|ing)
+#
+# Vague intensifiers (rule 4)
+very
+extremely
+highly
+greatly
+massively
+hugely
+#
+# Minimisers (rule 4). They also hide steps in a procedure.
+simply
+easily
+just
+obviously
+clearly
+of course
+#
+# Hedges and filler (rule 6)
+basically
+essentially
+actually
+in order to
+at the end of the day
+#
+# Idioms (rule 6)
+single pane of glass
+low[- ]hanging fruit
+silver bullet
+heavy lifting
+#
+# Comparative claims (allowed with a number or a proven fact, see "Backed claims")
+scalable
+efficient(ly)?
+fast(er|est)?
+slow(er|est)?
+better
+improved?
+significant(ly)?
+high[- ]performance
+low[- ]latency

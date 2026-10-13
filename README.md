@@ -2,28 +2,30 @@
 
 An agent skill that writes objective technical documents. Procedures use the imperative. Design documents, tech notes, and architecture descriptions use a formal objective voice. The skill does not add advice.
 
+It is the companion of [offer-writer](https://github.com/CSPDevLabs/offer-writer-skill). Use `offer-writer` for RFP responses, statements of work, proposals, solution descriptions, executive decks, and offer emails. The main difference: `offer-writer` allows recommendations with a reason; `technical-writer` bans them.
+
 **One directory, one skill.** `SKILL.md` is what an agent loads. This README is for people. Publishing this directory does not require a second copy of the instructions.
 
 The writing rules are in [`SKILL.md`](SKILL.md). See [`LICENSE.txt`](LICENSE.txt) for the package notice.
 
 ## Install from GitHub
 
-Replace `<owner>/<repo>` with the repository that contains this skill. When this directory is the repository root, the command below is enough. Node.js is required for `npx`.
+Node.js is required for `npx`.
 
 ```bash
-npx skills add <owner>/<repo> --skill technical-writer
+npx skills add CSPDevLabs/technical-writer-skill --skill technical-writer
 ```
 
 List the skill before installing:
 
 ```bash
-npx skills add <owner>/<repo> --list
+npx skills add CSPDevLabs/technical-writer-skill --list
 ```
 
 Use the skill once, without installing it:
 
 ```bash
-npx skills use <owner>/<repo> --skill technical-writer
+npx skills use CSPDevLabs/technical-writer-skill --skill technical-writer
 ```
 
 ### Cursor
@@ -31,13 +33,13 @@ npx skills use <owner>/<repo> --skill technical-writer
 Install into the current project. The skills CLI writes Cursor project skills to `.agents/skills/technical-writer/`.
 
 ```bash
-npx skills add <owner>/<repo> --skill technical-writer -a cursor -y
+npx skills add CSPDevLabs/technical-writer-skill --skill technical-writer -a cursor -y
 ```
 
 Install for every project on this machine. The CLI writes that copy to `~/.cursor/skills/technical-writer/`.
 
 ```bash
-npx skills add <owner>/<repo> --skill technical-writer -g -a cursor -y
+npx skills add CSPDevLabs/technical-writer-skill --skill technical-writer -g -a cursor -y
 ```
 
 A manual copy works too. Keep the directory name `technical-writer`. Cursor reads both of these locations:
@@ -50,14 +52,14 @@ A manual copy works too. Keep the directory name `technical-writer`. Cursor read
 Pass `-a` with the agent name from the [skills CLI agent list](https://github.com/vercel-labs/skills), or omit `-a` and pick an agent in the prompt.
 
 ```bash
-npx skills add <owner>/<repo> --skill technical-writer -a claude-code -y
+npx skills add CSPDevLabs/technical-writer-skill --skill technical-writer -a claude-code -y
 ```
 
 A private repository uses the same command. Git, the GitHub CLI, or SSH must already be allowed to clone it.
 
 ## Use
 
-Ask for the document in normal language. The agent loads this skill when the request is to write, rewrite, or review a technical document, design document, tech note, architecture description, procedure, method of procedure (MoP), runbook, or instruction.
+Ask for the document in normal language. The agent loads this skill when the request is to write, rewrite, or review a technical document, design document, tech note, architecture description, procedure, method of procedure (MoP), runbook, instruction, or how-to.
 
 Name the skill when you want it on a task the description might not match:
 
@@ -78,7 +80,8 @@ Publish this directory as the repository root, or as `skills/technical-writer/` 
 ## Layout
 
 ```text
-SKILL.md     # agent instructions; higher rules win on a conflict
-README.md    # install and use, for people
+SKILL.md          # agent instructions; higher rules win on a conflict
+banned-terms.txt  # word patterns for the pre-output check
+README.md         # install and use, for people
 LICENSE.txt  # package notice
 ```
